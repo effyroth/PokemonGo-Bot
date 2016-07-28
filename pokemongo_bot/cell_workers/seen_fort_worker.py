@@ -37,7 +37,7 @@ class SeenFortWorker(object):
             fort_name = 'Unknown'
         logger.log('[#] Now at Pokestop: ' + fort_name + ' - Spinning...',
                    'yellow')
-        sleep(2)
+        sleep(0.1)
         self.api.fort_search(fort_id=self.fort['id'],
                              fort_latitude=lat,
                              fort_longitude=lng,
@@ -124,13 +124,13 @@ class SeenFortWorker(object):
 
             if 'chain_hack_sequence_number' in response_dict['responses'][
                     'FORT_SEARCH']:
-                time.sleep(2)
+                time.sleep(0.1)
                 return response_dict['responses']['FORT_SEARCH'][
                     'chain_hack_sequence_number']
             else:
                 print_yellow('[#] may search too often, lets have a rest')
                 return 11
-        sleep(8)
+        sleep(0.1)
         return 0
 
     @staticmethod

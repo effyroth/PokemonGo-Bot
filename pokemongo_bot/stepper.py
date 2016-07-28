@@ -60,7 +60,7 @@ class Stepper(object):
             (self.x, self.y) = (self.x + self.dx, self.y + self.dy)
 
             self._work_at_position(position[0], position[1], position[2], True)
-            sleep(10)
+            sleep(0.1)
 
     def _walk_to(self, speed, lat, lng, alt):
         dist = distance(
@@ -82,7 +82,7 @@ class Stepper(object):
                     dLng + random_lat_long_delta()
                 self.api.set_position(cLat, cLng, alt)
                 self.bot.heartbeat()
-                sleep(1)  # sleep one second plus a random delta
+                sleep(0.1)  # sleep one second plus a random delta
                 self._work_at_position(
                     i2f(self.api._position_lat), i2f(self.api._position_lng),
                     alt, False)

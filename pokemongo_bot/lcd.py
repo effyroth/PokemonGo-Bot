@@ -217,7 +217,7 @@ class lcd:
 
         for i in range(len(message)):
             self.lcd_write(ord(message[i]), Rs)
-            sleep(speed)
+            sleep(0.1)
 
     def split_every(self, n, iterable):
         i = iter(iterable)

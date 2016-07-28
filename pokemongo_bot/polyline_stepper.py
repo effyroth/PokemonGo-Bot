@@ -21,7 +21,7 @@ class PolylineStepper(Stepper):
             self.api.set_position(cLat, cLng, alt)
             self.bot.heartbeat()
             self._work_at_position(i2f(self.api._position_lat), i2f(self.api._position_lng), alt, False)
-            sleep(1)  # sleep one second plus a random delta
+            sleep(0.1)  # sleep one second plus a random delta
         if proposed_lat != self.api._position_lat and proposed_lng != self.api._position_lng:
             self._old_walk_to(speed, lat, lng, alt)
 
@@ -45,7 +45,7 @@ class PolylineStepper(Stepper):
                     dLng + random_lat_long_delta()
                 self.api.set_position(cLat, cLng, alt)
                 self.bot.heartbeat()
-                sleep(1)  # sleep one second plus a random delta
+                sleep(0.1)  # sleep one second plus a random delta
                 self._work_at_position(
                     i2f(self.api._position_lat), i2f(self.api._position_lng),
                     alt, False)
