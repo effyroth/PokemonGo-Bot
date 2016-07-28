@@ -117,7 +117,7 @@ class EvolveAllWorker(object):
         else:
             # cache pokemons we can't evolve. Less server calls
             cache[pokemon_name] = 1
-        sleep(0.1)
+        sleep(1)
 
     # TODO: move to utils. These methods are shared with other workers.
     def transfer_pokemon(self, pid):
